@@ -79,8 +79,14 @@ mod tests {
 
     #[test]
     fn test_direction() {
-        assert_eq!(TrackDirection::Invalid.direction(), TrackDirection::INVALID_CODE);
-        assert_eq!(TrackDirection::NoValue.direction(), TrackDirection::INVALID_CODE);
+        assert_eq!(
+            TrackDirection::Invalid.direction(),
+            TrackDirection::INVALID_CODE
+        );
+        assert_eq!(
+            TrackDirection::NoValue.direction(),
+            TrackDirection::INVALID_CODE
+        );
         assert_eq!(
             TrackDirection::Unknown.direction(),
             TrackDirection::UNKNOWN_CODE

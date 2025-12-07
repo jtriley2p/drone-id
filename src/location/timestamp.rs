@@ -70,7 +70,6 @@ mod tests {
         assert_eq!(Timestamp::NoValue.timestamp(), 0);
         assert_eq!(Timestamp::Unknown.timestamp(), Timestamp::UNKNOWN_CODE);
         assert_eq!(Timestamp::Known(1).timestamp(), 1);
-
     }
 
     #[test]

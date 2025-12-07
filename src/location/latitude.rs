@@ -33,7 +33,7 @@ impl Latitude {
     pub const MULTIPLIER: f64 = 10_000_000.0;
 
     /// Returns the inner latitude value as a 64-bit float.
-    /// 
+    ///
     /// In the event a library consumer manually constructs an invalid value, ie
     /// `Latitude::Known(91.0)`, the [`Latitude::latitude`] function clamps the value down to the
     /// valid range.
@@ -84,7 +84,7 @@ mod tests {
 
         let latitude = Latitude::Known(value);
 
-        let encoded =  i32::from(latitude);
+        let encoded = i32::from(latitude);
 
         assert_eq!(encoded, (value * Latitude::MULTIPLIER) as i32);
     }
@@ -95,7 +95,7 @@ mod tests {
 
         let latitude = Latitude::Known(unknown_value as f64 / Latitude::MULTIPLIER);
 
-        let encoded =  i32::from(latitude);
+        let encoded = i32::from(latitude);
 
         assert_eq!(encoded, unknown_value);
     }
@@ -104,7 +104,7 @@ mod tests {
     fn test_encode_invalid() {
         let latitude = Latitude::Invalid;
 
-        let encoded =  i32::from(latitude);
+        let encoded = i32::from(latitude);
 
         assert_eq!(encoded, 0i32);
     }
@@ -113,7 +113,10 @@ mod tests {
     fn test_encode_invalid_state() {
         let invalid_state = Latitude::Known(91f64 * Latitude::MULTIPLIER);
 
-        assert_eq!(i32::from(invalid_state), (90f64 * Latitude::MULTIPLIER) as i32);
+        assert_eq!(
+            i32::from(invalid_state),
+            (90f64 * Latitude::MULTIPLIER) as i32
+        );
     }
 
     #[test]
@@ -121,9 +124,12 @@ mod tests {
         let value = 5i32;
         let latitude = Latitude::from(value);
 
-        assert_eq!(latitude, Latitude::Known(value as f64 / Latitude::MULTIPLIER));
+        assert_eq!(
+            latitude,
+            Latitude::Known(value as f64 / Latitude::MULTIPLIER)
+        );
     }
-    
+
     #[test]
     fn test_decode_invalid() {
         let too_small = -91.0 * Latitude::MULTIPLIER;
@@ -131,7 +137,6 @@ mod tests {
 
         assert_eq!(Latitude::from(too_small as i32), Latitude::Invalid);
         assert_eq!(Latitude::from(too_large as i32), Latitude::Invalid);
-
     }
 
     #[test]

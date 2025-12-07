@@ -84,8 +84,14 @@ mod tests {
     #[test]
     fn test_meters_per_second() {
         assert_eq!(SpeedAccuracy::Known(1).meters_per_second(), 10.0);
-        assert_eq!(SpeedAccuracy::Unknown.meters_per_second(), SpeedAccuracy::MAX);
-        assert_eq!(SpeedAccuracy::Reserved.meters_per_second(), SpeedAccuracy::MAX);
+        assert_eq!(
+            SpeedAccuracy::Unknown.meters_per_second(),
+            SpeedAccuracy::MAX
+        );
+        assert_eq!(
+            SpeedAccuracy::Reserved.meters_per_second(),
+            SpeedAccuracy::MAX
+        );
     }
 
     #[test]
@@ -105,7 +111,7 @@ mod tests {
     #[test]
     fn test_encode_unknown() {
         let unknown = SpeedAccuracy::Unknown;
-        
+
         assert_eq!(u8::from(unknown), SpeedAccuracy::UNKNOWN_CODE);
     }
 

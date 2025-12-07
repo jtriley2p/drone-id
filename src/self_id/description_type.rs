@@ -81,7 +81,10 @@ mod tests {
     fn test_encode_private_use() {
         let private_use = DescriptionType::PrivateUse;
 
-        assert_eq!(u8::from(private_use), DescriptionType::PRIVATE_USE_THRESHOLD);
+        assert_eq!(
+            u8::from(private_use),
+            DescriptionType::PRIVATE_USE_THRESHOLD
+        );
     }
 
     #[test]
@@ -104,6 +107,4 @@ mod tests {
 
         assert_eq!(decoded, DescriptionType::PrivateUse);
     }
-
-
 }

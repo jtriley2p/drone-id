@@ -146,7 +146,13 @@ impl<const N: usize> TryFrom<[Message; N]> for Pack {
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{BasicID, UASID, UAType, UTMAssignedUUID}, messages::{Message, MessageType}, operator_id::{OperatorID, OperatorIDType}, pack::Pack, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{BasicID, UASID, UAType, UTMAssignedUUID},
+        messages::{Message, MessageType},
+        operator_id::{OperatorID, OperatorIDType},
+        pack::Pack,
+        try_serialize::TrySerialize,
+    };
 
     const fn total_len(message_count: usize) -> usize {
         2 + message_count * Pack::MESSAGES_LENGTH
@@ -192,13 +198,20 @@ mod tests {
     #[test]
     fn test_encode_two() {
         let operator_id = Message::from(OperatorID::new(OperatorIDType::OperatorID, [2u8; 20]));
-        let basic_id = Message::from(BasicID::new(UAType::Aeroplane, UASID::UTMAssignedUUID(UTMAssignedUUID::new([2u8; 20]))));
+        let basic_id = Message::from(BasicID::new(
+            UAType::Aeroplane,
+            UASID::UTMAssignedUUID(UTMAssignedUUID::new([2u8; 20])),
+        ));
 
         let mut encoded_operator_id_message = [0u8; 25];
-        operator_id.try_serialize(&mut encoded_operator_id_message).unwrap();
+        operator_id
+            .try_serialize(&mut encoded_operator_id_message)
+            .unwrap();
 
         let mut encoded_basic_id_message = [0u8; 25];
-        basic_id.try_serialize(&mut encoded_basic_id_message).unwrap();
+        basic_id
+            .try_serialize(&mut encoded_basic_id_message)
+            .unwrap();
 
         let pack = Pack::try_from([operator_id, basic_id]).unwrap();
 
@@ -228,7 +241,9 @@ mod tests {
         let operator_id = Message::from(OperatorID::new(OperatorIDType::OperatorID, [2u8; 20]));
 
         let mut encoded_operator_id_message = [0u8; 25];
-        operator_id.try_serialize(&mut encoded_operator_id_message).unwrap();
+        operator_id
+            .try_serialize(&mut encoded_operator_id_message)
+            .unwrap();
 
         let mut encoded = [0u8; total_len(1)];
         encoded[0] = Pack::MESSAGES_LENGTH as u8;
@@ -236,20 +251,27 @@ mod tests {
         encoded[2..27].clone_from_slice(&encoded_operator_id_message);
 
         let pack = Pack::try_from([operator_id]).unwrap();
-        
+
         assert_eq!(Pack::try_from(encoded.as_ref()).unwrap(), pack);
     }
 
     #[test]
     fn test_decode_two() {
         let operator_id = Message::from(OperatorID::new(OperatorIDType::OperatorID, [2u8; 20]));
-        let basic_id = Message::from(BasicID::new(UAType::Aeroplane, UASID::UTMAssignedUUID(UTMAssignedUUID::new([2u8; 20]))));
+        let basic_id = Message::from(BasicID::new(
+            UAType::Aeroplane,
+            UASID::UTMAssignedUUID(UTMAssignedUUID::new([2u8; 20])),
+        ));
 
         let mut encoded_operator_id_message = [0u8; 25];
-        operator_id.try_serialize(&mut encoded_operator_id_message).unwrap();
+        operator_id
+            .try_serialize(&mut encoded_operator_id_message)
+            .unwrap();
 
         let mut encoded_basic_id_message = [0u8; 25];
-        basic_id.try_serialize(&mut encoded_basic_id_message).unwrap();
+        basic_id
+            .try_serialize(&mut encoded_basic_id_message)
+            .unwrap();
 
         let mut encoded = [0u8; total_len(2)];
         encoded[0] = Pack::MESSAGES_LENGTH as u8;
@@ -258,7 +280,7 @@ mod tests {
         encoded[27..52].clone_from_slice(&encoded_basic_id_message);
 
         let pack = Pack::try_from([operator_id, basic_id]).unwrap();
-        
+
         assert_eq!(Pack::try_from(encoded.as_ref()).unwrap(), pack);
     }
 
@@ -276,7 +298,9 @@ mod tests {
         let operator_id = Message::from(OperatorID::new(OperatorIDType::OperatorID, [2u8; 20]));
 
         let mut encoded_operator_id_message = [0u8; 25];
-        operator_id.try_serialize(&mut encoded_operator_id_message).unwrap();
+        operator_id
+            .try_serialize(&mut encoded_operator_id_message)
+            .unwrap();
 
         let result = Pack::try_from([
             operator_id,
@@ -290,7 +314,7 @@ mod tests {
             operator_id,
             operator_id,
         ]);
-        
+
         assert!(result.is_err());
     }
 }

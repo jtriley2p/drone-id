@@ -93,7 +93,10 @@ impl TrySerialize for UASID {
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{UASID, UTMAssignedUUID}, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{UASID, UTMAssignedUUID},
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_encode() {

@@ -89,11 +89,13 @@ impl TrySerialize for SelfID {
 
 #[cfg(test)]
 mod tests {
-    use crate::{self_id::{DescriptionType, SelfID}, try_serialize::TrySerialize};
+    use crate::{
+        self_id::{DescriptionType, SelfID},
+        try_serialize::TrySerialize,
+    };
 
     const TEXT: [u8; 23] = [
-        97, 98, 111, 108, 105, 115, 104, 32, 105, 99, 101,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        97, 98, 111, 108, 105, 115, 104, 32, 105, 99, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ];
 
     #[test]

@@ -48,7 +48,7 @@ impl SessionID {
     pub fn new(session_id_type: SessionIDType, id: [u8; 19]) -> Self {
         Self {
             session_id_type,
-            id
+            id,
         }
     }
 
@@ -102,7 +102,10 @@ impl TrySerialize for SessionID {
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{SessionID, SessionIDType}, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{SessionID, SessionIDType},
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_session_id_type_encode_decode() {

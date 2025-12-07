@@ -118,7 +118,10 @@ mod tests {
     fn test_encode_invalid_state() {
         let invalid_state = VerticalAccuracy::Known(7);
 
-        assert_eq!(u8::from(invalid_state), VerticalAccuracy::RESERVED_THRESHOLD);
+        assert_eq!(
+            u8::from(invalid_state),
+            VerticalAccuracy::RESERVED_THRESHOLD
+        );
     }
 
     #[test]

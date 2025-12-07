@@ -146,7 +146,6 @@ mod tests {
         let encoded = u8::from(horizontal_accuracy);
 
         assert_eq!(encoded, unknown_code);
-        
     }
 
     #[test]

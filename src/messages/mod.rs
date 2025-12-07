@@ -144,7 +144,7 @@ macro_rules! impl_from_for_message {
             fn from(value: $type_path) -> Self {
                 Self {
                     protocol_version: Message::PROTOCOL_VERSION,
-                    message_type: MessageType::$message_type(value)
+                    message_type: MessageType::$message_type(value),
                 }
             }
         }
@@ -161,7 +161,12 @@ impl_from_for_message!(Pack, crate::pack::Pack);
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{BasicID, UASID, UAType, UTMAssignedUUID}, messages::{Message, MessageType}, operator_id::{OperatorID, OperatorIDType}, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{BasicID, UASID, UAType, UTMAssignedUUID},
+        messages::{Message, MessageType},
+        operator_id::{OperatorID, OperatorIDType},
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_getters() {

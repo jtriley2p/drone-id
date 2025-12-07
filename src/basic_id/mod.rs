@@ -84,7 +84,10 @@ impl TrySerialize for BasicID {
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{BasicID, UASID, UAType}, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{BasicID, UASID, UAType},
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_new() {

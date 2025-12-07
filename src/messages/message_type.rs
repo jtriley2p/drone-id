@@ -102,7 +102,11 @@ impl TrySerialize for MessageType {
 
 #[cfg(test)]
 mod tests {
-    use crate::{basic_id::{BasicID, UASID, UAType}, messages::MessageType, try_serialize::TrySerialize};
+    use crate::{
+        basic_id::{BasicID, UASID, UAType},
+        messages::MessageType,
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_encode() {
@@ -143,13 +147,12 @@ mod tests {
     }
 
     #[test]
-    fn test_decode_fails_invalid_data_length () {
+    fn test_decode_fails_invalid_data_length() {
         let too_short = [0u8; 24];
         let too_long = [0u8; 26];
 
         assert!(MessageType::try_from(too_short.as_ref()).is_err());
         assert!(MessageType::try_from(too_long.as_ref()).is_err());
-
     }
 
     #[test]

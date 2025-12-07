@@ -78,7 +78,10 @@ impl TrySerialize for OperatorID {
 
 #[cfg(test)]
 mod tests {
-    use crate::{operator_id::{OperatorID, OperatorIDType}, try_serialize::TrySerialize};
+    use crate::{
+        operator_id::{OperatorID, OperatorIDType},
+        try_serialize::TrySerialize,
+    };
 
     #[test]
     fn test_getters() {

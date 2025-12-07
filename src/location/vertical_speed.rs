@@ -11,7 +11,7 @@
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub enum VerticalSpeed {
     /// Invalid value.
-    /// 
+    ///
     /// Specification calls for this, but there seems to be no way to construct this through
     /// deserialization.
     Invalid,
@@ -70,9 +70,11 @@ mod tests {
     fn test_vertical_speed() {
         assert_eq!(VerticalSpeed::Invalid.vertical_speed(), 0.0);
         assert_eq!(VerticalSpeed::NoValue.vertical_speed(), 0.0);
-        assert_eq!(VerticalSpeed::Unknown.vertical_speed(), VerticalSpeed::UNKNOWN_CODE);
+        assert_eq!(
+            VerticalSpeed::Unknown.vertical_speed(),
+            VerticalSpeed::UNKNOWN_CODE
+        );
         assert_eq!(VerticalSpeed::Known(1.0).vertical_speed(), 1.0);
-
     }
 
     #[test]

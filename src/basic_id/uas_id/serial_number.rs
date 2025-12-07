@@ -13,9 +13,9 @@ pub struct SerialNumber([u8; 20]);
 
 impl SerialNumber {
     /// Tries to cosntruct a new serial number.
-    /// 
+    ///
     /// Returns an error if:
-    /// 
+    ///
     /// - `mfr_code` length is not 4.
     /// - `mfr_serial` length is not between 1 and 15 (inclusive).
     /// - `mfr_code` is not ASCII, decimal digits, or nulls.
@@ -25,10 +25,8 @@ impl SerialNumber {
             return Err(Error::InvalidDataLength);
         }
 
-        let mfr_code_valid = mfr_code.chars()
-            .all(Self::is_valid_character);
-        let mfr_serial_valid = mfr_serial.chars()
-            .all(Self::is_valid_character);
+        let mfr_code_valid = mfr_code.chars().all(Self::is_valid_character);
+        let mfr_serial_valid = mfr_serial.chars().all(Self::is_valid_character);
 
         if !mfr_code_valid || !mfr_serial_valid {
             return Err(Error::InvalidSerialNumber);
@@ -67,7 +65,9 @@ impl SerialNumber {
             .ok_or(Error::Unreachable)
             .unwrap();
 
-        &str::from_utf8(mfr_serial).map_err(|_| Error::Unreachable).unwrap()
+        &str::from_utf8(mfr_serial)
+            .map_err(|_| Error::Unreachable)
+            .unwrap()
     }
 
     fn is_valid_character(c: char) -> bool {

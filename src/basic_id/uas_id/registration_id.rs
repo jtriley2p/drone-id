@@ -12,9 +12,9 @@ pub struct RegistrationID([u8; 20]);
 
 impl RegistrationID {
     /// Tries to construct a new Resgistration ID
-    /// 
+    ///
     /// Returns error if:
-    /// 
+    ///
     /// - the total length of `nationality_mark` and `caa_id` is greater than 19.
     /// - `nationality_mark` is not ascii + decimal digits (or null).
     /// - `caa_id` is not ascii + decimal digits (or null).
@@ -23,10 +23,12 @@ impl RegistrationID {
             return Err(Error::InvalidDataLength);
         }
 
-        let valid_nationality_mark = nationality_mark.chars()
+        let valid_nationality_mark = nationality_mark
+            .chars()
             .all(|c| c.is_ascii_uppercase() || c.is_digit(10) || c == '\x00');
 
-        let valid_caa_id = caa_id.chars()
+        let valid_caa_id = caa_id
+            .chars()
             .all(|c| c.is_ascii_uppercase() || c.is_digit(10) || c == '\x00');
 
         if !valid_nationality_mark || !valid_caa_id {

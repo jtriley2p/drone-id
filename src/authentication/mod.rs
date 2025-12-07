@@ -94,7 +94,8 @@ mod tests {
             total_length as usize,
             timestamp,
             data,
-        ).unwrap();
+        )
+        .unwrap();
 
         let authentication = Authentication::Initial(initial);
 
@@ -129,7 +130,8 @@ mod tests {
             total_length as usize,
             timestamp,
             data,
-        ).unwrap();
+        )
+        .unwrap();
 
         let authentication = Authentication::Initial(initial);
 
@@ -161,7 +163,8 @@ mod tests {
             25,
             Timestamp::new(1),
             [2u8; 17],
-        ).unwrap();
+        )
+        .unwrap();
 
         let authentication = Authentication::Initial(initial);
 
