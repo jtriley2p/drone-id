@@ -1,0 +1,10 @@
+[package]
+name = "drone-id"
+description = "ASTM F3411 22a implementation for Drone ID"
+version = "0.1.0"
+edition = "2024"
+license-file = "LICENSE"
+keywords = ["drone", "drone-id", "fpv"]
+categories = ["aerospace::drones"]
+
+[dependencies]
