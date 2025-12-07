@@ -5,7 +5,7 @@
 The federal aviation administration (faa) of the united states federal government commands all
 people flying unmanned aerial systems (uas) greater than 250 grams in weight within its airspace to
 broadcast uniquely identifying information about the uas which is registered to the operator in a
-federal database. It also necessitates broadcasting information such as the craft's locaton, speed,
+federal database. It also necessitates broadcasting information such as the craft's location, speed,
 and direction.
 
 But there's a catch.
@@ -15,7 +15,7 @@ writing implementors must pay one hundred and thirteen united states dollars to 
 to access the specification for compliance with the law.
 
 So the specification has been paid for and now this reference implementation optimizes for rich
-typing, memory safety, and readaiblity over raw performance.
+typing, memory safety, and readability over raw performance.
 
 > SOAPBOX: The passive aggressive README introduction is a bit of a soapbox as well but to make it
 > abundantly clear: Putting federally mandated specifications behind the paywall of a private entity
@@ -32,8 +32,8 @@ typing, memory safety, and readaiblity over raw performance.
 
 ## High Level Implementation and Purpose
 
-We implement the ASTM F3411-22a specifcation, which defines core data types, encoding, and decoding
-schemes reagrding the Drone ID requiremnts. This library serves as a core library, dealing with
+We implement the ASTM F3411-22a specification, which defines core data types, encoding, and decoding
+schemes regarding the Drone ID requirements. This library serves as a core library, dealing with
 WiFi and Bluetooth packets is beyond the scope of this library; it is akin to the work of the
 [Open Drone ID](https://github.com/opendroneid) community.
 
@@ -124,7 +124,7 @@ additionally style as follows.
 - Leave empty lines between expressions (where reasonable) to avoid dense clusters of code.
 - Reasonably express variable names: sometimes they're tool long, but we optimize for readability.
 - De-nest where possible: the squint test should show reasonably flat code.
-- Prefer over-documentation: a variable's purpose or layout should not be ambigious.
+- Prefer over-documentation: a variable's purpose or layout should not be ambiguous.
 - Reasonably minimize magic values: scope consts to their appropriate types.
 - Reasonably minimize indirection: repeat yourself for readability's sake.
 
@@ -142,8 +142,3 @@ by a test. Generally, this breaks down into a few consistent groups of tests:
 - `test_decode_fails_invalid_length`: check the decoder returns err on an invalid data length
 - `test_encode_invalid_value`: check encoder returns err on invalid values
 - `test_decode_invalid_value`: check decoder returns err on invalid values
-
-## TODO
-
-- spellchecks
-- (maybe) encapsulate reserved, private use, invalid, and unknown values anyway?

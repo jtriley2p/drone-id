@@ -158,21 +158,21 @@ mod tests {
     }
 
     #[test]
-    fn test_encode_open_classifcation() {
+    fn test_encode_open_classification() {
         let open_classification = OpenClassification::Class0;
 
         assert_eq!(u8::from(open_classification), 1);
     }
 
     #[test]
-    fn test_decode_open_classifcation() {
+    fn test_decode_open_classification() {
         let decoded = OpenClassification::try_from(1).unwrap();
 
         assert_eq!(decoded, OpenClassification::Class0);
     }
 
     #[test]
-    fn test_decode_open_classifcation_fails_invalid_integer() {
+    fn test_decode_open_classification_fails_invalid_integer() {
         assert!(OpenClassification::try_from(16).is_err());
     }
 }

@@ -5,7 +5,7 @@
 //! Invalid data length indicates the slice reference, be it the mutable one for serializing or the
 //! immutable one for deserializing, is of the wrong length. During each we provide each data type
 //! with only the subslice required for their portion of (de)serialization; this also allows for
-//! partial (de)serialization for users only intertacting with a subset of the messages or data
+//! partial (de)serialization for users only interacting with a subset of the messages or data
 //! types.
 //!
 //! Invalid integer generally refers to the construction of a value being incorrect. Some enumerated

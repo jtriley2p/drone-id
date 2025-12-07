@@ -102,7 +102,7 @@ mod tests {
     }
 
     #[test]
-    fn test_enocde_reserved() {
+    fn test_encode_reserved() {
         let reserved = SpeedAccuracy::Reserved;
 
         assert_eq!(u8::from(reserved), SpeedAccuracy::RESERVED_THRESHOLD);
@@ -130,7 +130,7 @@ mod tests {
     }
 
     #[test]
-    fn test_deocde_reserved() {
+    fn test_decode_reserved() {
         let reserved = SpeedAccuracy::from(SpeedAccuracy::RESERVED_THRESHOLD);
 
         assert_eq!(reserved, SpeedAccuracy::Reserved);

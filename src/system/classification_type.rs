@@ -17,7 +17,7 @@ impl ClassificationType {
     /// Special value representing the minimum "reserved" value.
     pub const RESERVED_THRESHOLD: u8 = 2;
 
-    /// Special value representing the maxmimum valid value.
+    /// Special value representing the maximum valid value.
     pub const MAX: u8 = 7;
 }
 

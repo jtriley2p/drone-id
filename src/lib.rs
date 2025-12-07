@@ -1,11 +1,11 @@
 //! # Drone ID
 //!
-//! The Drone ID Rust library implemets the core data types as well as the encoding and decoding
+//! The Drone ID Rust library implements the core data types as well as the encoding and decoding
 //! schemes of the ASTM F3411-22a specification, as required by the Federal Aviation Administration
 //! in the United States.
 //!
 //! | Note: Drone, Unmanned Aerial System (UAS), and Unmanned Aircraft (UA) may be used
-//! | interchangably in the documentation.
+//! | interchangeably in the documentation.
 //!
 //! ## Message Types
 //!

@@ -7,7 +7,7 @@
 /// [`GroundSpeed::PRECISION_THRESHOLD`] (63.75 m/s).
 ///
 /// If the value is greater than the [`GroundSpeed::PRECISION_THRESHOLD`], we encode the value as an
-/// 8-bit integer repreesnting 0.75 m/s increments and return a flag value of `true` which tells the
+/// 8-bit integer representing 0.75 m/s increments and return a flag value of `true` which tells the
 /// decoder to use low precision.
 ///
 /// If the value is less than the [`GroundSpeed::PRECISION_THRESHOLD`], we encode the value as an

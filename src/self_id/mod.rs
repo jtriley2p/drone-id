@@ -1,7 +1,7 @@
 //! ## Self ID Message
 //!
 //! [`SelfID`] is an optional message which can self identify or describe operations for observers
-//! of the UAS operation. This message is simply a description type and an assocaiated free-text
+//! of the UAS operation. This message is simply a description type and an associated free-text
 //! ASCII field. Types could be general text, emergency, or other private uses.
 //!
 //! Specification lists an example of a realtor sending a Self ID message indicating the operation

@@ -5,7 +5,7 @@
 //!
 //! All internal data types are exposed through the library, so manual construction is possible,
 //! though care must be taken to ensure expected properties hold. Structs can encapsulate their
-//! fields such that construction may only happen under constrolled circumstances, but enumerations
+//! fields such that construction may only happen under controlled circumstances, but enumerations
 //! cannot constrain such things. As such, especially manual construction of enumerated values must
 //! be done with care.
 //!
@@ -102,13 +102,13 @@ impl TryFrom<&[u8]> for Message {
     type Error = Error;
 
     fn try_from(value: &[u8]) -> Result<Self, Self::Error> {
-        // we dont check the length here because it is checked in the `message_type` parsing, which
+        // We don't check the length here because it is checked in the `message_type` parsing, which
         // determines first if the internal message is a `pack`, implying a different value length.
         //
-        // we could also check this here but we're separating concerns & reducing redunancy by not
+        // We could also check this here but we're separating concerns & reducing redundancy by not
         // doing this.
         //
-        // length should be `25` if anything but a pack. if the message is a pack, the length should
+        // Length should be `25` if anything but a pack. if the message is a pack, the length should
         // be `2 + (msg_count * 25)`.
         let protocol_version = value[0] & 0b0000_1111;
         let message_type = value.as_ref().try_into()?;

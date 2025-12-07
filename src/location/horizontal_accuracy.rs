@@ -7,7 +7,7 @@
 /// that the accuracy is unknown.
 ///
 /// Ideally, this would be fully enumerated, but since the values to enumerate are also numeric,
-/// writing out "EightteenPointFiveTwoKm" etc would be obnoxious.
+/// writing out "EighteenPointFiveTwoKm" etc would be obnoxious.
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub enum HorizontalAccuracy {
     /// Reserved.
@@ -34,7 +34,7 @@ impl HorizontalAccuracy {
     /// value is unknown. All other values returned implies the accuracy is less than the returned
     /// value.
     ///
-    /// While constructing [`HorizontalAccuracy`] through the deseralizer should never allow a known
+    /// While constructing [`HorizontalAccuracy`] through the deserializer should never allow a known
     /// value greater than 13, a library consumer may construct this manually, ie
     /// `HorizontalAccuracy::Known(13)`, which is technically invalid, but to avoid a panic, we
     /// return `accuracy`

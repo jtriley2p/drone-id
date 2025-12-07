@@ -3,7 +3,7 @@ use crate::try_serialize::TrySerialize;
 
 /// Registration ID for a given Civil Aviation Authority
 ///
-/// Contains both a nationalitty mark issued by the International Civil Aviation Organization and a
+/// Contains both a nationality mark issued by the International Civil Aviation Organization and a
 /// unique identifier issued by the respective Civil Aviation Authority.
 ///
 /// The string given must be ASCII upper case, digits, or a dot character ".".
@@ -11,7 +11,7 @@ use crate::try_serialize::TrySerialize;
 pub struct RegistrationID([u8; 20]);
 
 impl RegistrationID {
-    /// Tries to construct a new Resgistration ID
+    /// Tries to construct a new Registration ID
     ///
     /// Returns error if:
     ///

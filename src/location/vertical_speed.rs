@@ -1,6 +1,6 @@
 /// Vertical Speed
 ///
-/// Represents speed upward relative to the WSG-84 datum measued in meters per second.
+/// Represents speed upward relative to the WSG-84 datum measured in meters per second.
 ///
 /// A value of 63.0 indicates the vertical speed is unknown, while any other values beyond the lower
 /// boundary of -63.0 and the upper boundary of 63.0 are clamped to their respective boundaries.

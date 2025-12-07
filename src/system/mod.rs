@@ -1,6 +1,6 @@
 //! ## System Message
 //!
-//! [`System`] messages indicate opereating area and operator information.
+//! [`System`] messages indicate operating area and operator information.
 //!
 //! ### Operator Information
 //!
@@ -50,7 +50,7 @@ use crate::try_serialize::TrySerialize;
 /// System Message
 ///
 /// Encapsulates operator location information, classification of the aircraft, a timestamp, and
-/// area parameters such as the radius, ceiling, floor, and number of aircarft operating in the
+/// area parameters such as the radius, ceiling, floor, and number of aircraft operating in the
 /// area.
 #[derive(Clone, Copy, PartialEq, Debug)]
 pub struct System {

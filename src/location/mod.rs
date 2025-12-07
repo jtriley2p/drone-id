@@ -145,7 +145,7 @@ impl Location {
         self.height_type
     }
 
-    /// Returns the angle relatiev to True North.
+    /// Returns the angle relative to True North.
     pub fn track_direction(&self) -> TrackDirection {
         self.track_direction
     }

@@ -12,7 +12,7 @@ use crate::try_serialize::TrySerialize;
 pub struct SerialNumber([u8; 20]);
 
 impl SerialNumber {
-    /// Tries to cosntruct a new serial number.
+    /// Tries to construct a new serial number.
     ///
     /// Returns an error if:
     ///

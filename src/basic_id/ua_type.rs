@@ -13,7 +13,7 @@ pub enum UAType {
     Helicopter,
     /// Unpowered rotor wing using autorotation.
     Gyroplane,
-    /// Vertial Take-off and Landing (VTOL) UAS with an alternative flight characteristic, such as
+    /// Vertical Take-off and Landing (VTOL) UAS with an alternative flight characteristic, such as
     /// a fixed wing.
     HybridLift,
     /// UAS that uses flapping wings to generate lift.
@@ -32,7 +32,7 @@ pub enum UAType {
     Rocket,
     /// UAS which communicates via a wired connection.
     TetheredPoweredAircraft,
-    /// Ground obstacle, specifiaction is unclear as to what this is.
+    /// Ground obstacle, specification is unclear as to what this is.
     GroundObstacle,
     /// Unlisted but not undeclared.
     Other,

@@ -5,7 +5,7 @@
 //! containing the full message pack.
 //!
 //! Since [`Message`] fields inflate to larger values and incur the additional memory cost of Rust's
-//! memory layout, we keep the messages serialized until retreival via [`Pack::try_get_message`].
+//! memory layout, we keep the messages serialized until retrieval via [`Pack::try_get_message`].
 //! The upper bound of bytes required for the internal messages in the pack is `225` bytes
 //! (`9 * 25`).
 //!
