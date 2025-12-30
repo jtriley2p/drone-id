@@ -8,27 +8,12 @@ broadcast uniquely identifying information about the uas which is registered to 
 federal database. It also necessitates broadcasting information such as the craft's location, speed,
 and direction.
 
-But there's a catch.
-
-The specification for such compliance is behind the paywall of a private entity. At the time of
-writing implementors must pay one hundred and thirteen united states dollars to ASTM international
-to access the specification for compliance with the law.
+The problem is the specification for such compliance is behind the paywall of a private entity. At
+the time of writing implementors must pay $113 to ASTM international to access the specification for
+compliance with the law.
 
 So the specification has been paid for and now this reference implementation optimizes for rich
 typing, memory safety, and readability over raw performance.
-
-> SOAPBOX: The passive aggressive README introduction is a bit of a soapbox as well but to make it
-> abundantly clear: Putting federally mandated specifications behind the paywall of a private entity
-> already screams "lobbying", be it from the organization which paywalls it or the manufacturers and
-> implementors that intend to maximize the barrier to entry into their self-proclaimed "free
-> market".
->
-> Intellectual property laws which encourage us to hide our knowledge from our fellow humans and
-> force duplicate work at best and damn our work to obscurity at worst must be abolished. It hinders
-> human progress and encourages extraction on artificial scarcity of trivially replicable
-> information.
->
-> Liberate the source code, liberate the people.
 
 ## High Level Implementation and Purpose
 
