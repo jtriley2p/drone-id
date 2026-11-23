@@ -5,3 +5,12 @@ version = 4
 [[package]]
 name = "drone-id"
 version = "0.1.0"
+dependencies = [
+ "remoteid",
+]
+
+[[package]]
+name = "remoteid"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "212a4b231e5b2a71fd5c1fb52a103d2ec345d1e55676a4508c866505b71a4807"

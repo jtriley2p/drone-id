@@ -56,4 +56,6 @@ pub mod operator_id;
 pub mod pack;
 pub mod self_id;
 pub mod system;
+#[cfg(feature = "trust")]
+pub mod trust;
 pub mod try_serialize;

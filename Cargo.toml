@@ -7,4 +7,9 @@ license-file = "LICENSE"
 keywords = ["drone", "drone-id", "fpv"]
 categories = ["aerospace::drones"]
 
+[features]
+# Spoof/trust verdicts for received frames, via the `remoteid` crate.
+trust = ["dep:remoteid"]
+
 [dependencies]
+remoteid = { version = "0.3.3", optional = true, default-features = false }
